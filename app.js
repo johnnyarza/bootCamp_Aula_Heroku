@@ -20,14 +20,14 @@ app.get('/', (req, res) => {
 app.listen(process.env.PORT, async () => {
   try {
     start();
-    
+
     console.log('API started');
   } catch (error) {
     console.log(error.message);
   }
 });
 
-async const start = () => {
+const start = async () => {
   try {
     await mongoose.connect(uri, {
       useNewUrlParser: true,
