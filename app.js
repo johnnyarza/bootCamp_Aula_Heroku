@@ -14,7 +14,11 @@ app.use(express.json());
 app.use('/student', studentRouter);
 
 app.get('/', (req, res) => {
-  res.send('Conectado. Usar outra rota');
+  try {
+    res.send('Conectado. Usar outra rota');
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 
 app.listen(process.env.PORT, async () => {
