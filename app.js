@@ -18,6 +18,7 @@ app.get('/', (req, res) => {});
 app.listen(process.env.PORT, async () => {
   try {
     await start();
+    console.log(uri);
     console.log('API started');
   } catch (error) {
     console.log(error.message);
