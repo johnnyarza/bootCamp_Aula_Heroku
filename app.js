@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const uri = `mongodb+srv://${process.env.USERDB}:${process.env.PWD}@cluster0.oonph.mongodb.net/grades?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USERDB}:${process.env.PWDDB}@cluster0.oonph.mongodb.net/grades?retryWrites=true&w=majority`;
 
 const app = express();
 
