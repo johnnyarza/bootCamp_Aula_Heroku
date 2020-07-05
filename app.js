@@ -13,21 +13,23 @@ app.use(express.json());
 
 app.use('/student', studentRouter);
 
-app.get('/', (req, res) => {});
+app.get('/', (req, res) => {
+  res.send('Conectado. Usar outra rota');
+});
 
 app.listen(process.env.PORT, async () => {
   try {
-    await start();
-    console.log(uri);
+    start();
+    
     console.log('API started');
   } catch (error) {
     console.log(error.message);
   }
 });
 
-const start = () => {
+async const start = () => {
   try {
-    mongoose.connect(uri, {
+    await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
